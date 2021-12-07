@@ -1,0 +1,26 @@
+{
+  "name": "joyjet-test",
+  "version": "1.0.0",
+  "description": "Website test to Joyjet Company",
+  "keywords": [],
+  "author": "joao lindoso",
+  "license": "ISC",
+  "scripts": {
+    "init:sass": "node-sass sass/main.scss assets/scssfile.css -w",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bootstrap": "^4.6.1",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.6",
+    "elegant-icons": "0.0.1",
+    "express": "^4.17.1",
+    "express-load": "^1.1.16",
+    "express-session": "^1.17.2",
+    "jquery": "^1.9.1",
+    "node-sass": "^6.0.1",
+    "popper.js": "^1.16.1",
+    "socket.io": "^4.4.0"
+  },
+  "main": "server.js"
+}

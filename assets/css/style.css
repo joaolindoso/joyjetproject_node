@@ -1,0 +1,687 @@
+/*
+Theme Name: Projeto Joyjet 2021
+Theme URI: http://todayhost.com.br/site/joyjet
+Description: Tema do Projeto Joyjet
+Author: João Lindoso / TodayHost
+Author URI: http://www.todayhost.com.br
+Version: 1.0
+Tags: Joyjet, responsive, html, css, js, bootstrap
+*/
+
+:root{
+  --blue:#4A90E2;
+  --my2blue: #3B7ADB;
+  --black:#354046;
+  --white: #ffffff;
+  --gray: #8C94A8;
+  --darkgray: #3E4D60;
+  --mediumgray: #908C8C;
+  --lightgray: #f2f2f2;
+}
+
+/* 
+* table - font-size px - rem
+10px	0.625rem
+11px	0.6875rem
+12px	0.75rem
+13px	0.8125rem
+14px	0.875rem
+15px	0.9375rem
+16px	1rem
+17px	1.0625rem
+18px	1.125rem
+19px	1.1875rem
+20px	1.25rem
+21px	1.3125rem
+22px	1.375rem
+23px	1.4375rem
+24px	1.5rem
+25px	1.5625rem
+26px	1.625rem
+27px	1.6875rem
+28px	1.75rem
+29px	1.8125rem
+30px	1.875rem
+31px	1.9375rem
+32px	2rem
+33px	2.0625rem
+34px	2.125rem
+35px	2.1875rem
+36px	2.25rem
+37px	2.3125rem
+38px	2.375rem
+39px	2.4375rem
+40px	2.5rem
+41px	2.5625rem
+42px	2.625rem
+43px	2.6875rem
+44px	2.75rem
+45px	2.8125rem
+46px	2.875rem
+47px	2.9375rem
+48px	3rem
+49px	3.0625rem
+50px	3.125rem
+*/
+
+/*
+* table of html titles 
+H1=36px, 2.25rem
+H2=24px, 1.5rem
+H3=21px, 1.3125rem
+H4=18px, 1.125rem
+H5=16px, 1rem
+H6=14px, 0.875rem
+*/
+
+
+*{
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  border:none !important;
+  outline: none !important;
+  text-decoration: none !important;
+  font-weight: 400;
+  transition: all .2s linear;
+}
+
+h1 {
+  font-size: 2.25rem;
+} 
+h2 {
+  font-size: 1.5rem;
+} 
+h3 {
+  font-size: 1.3125rem;
+} 
+h4 {
+  font-size: 1.125rem;
+} 
+h5 {
+  font-size: 1rem;
+} 
+h6 {
+  font-size: 0.875rem;
+} 
+
+html{
+  font-size: 100%;
+  overflow-x: hidden;
+}
+
+body{
+  overflow-x: hidden;
+  background-color: var(--lightgray);
+}
+
+section{
+  overflow: hidden;
+}
+
+*::selection{
+  background:var(--black);
+  color:#fff;
+}
+
+.button{
+  height:3.5rem;
+  width: 15rem;
+  background:var(--blue);
+  color:#fff;
+  font-size: 1.7rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  margin: 2rem 0 1rem 0;
+}
+
+.button::before{
+  content: '';
+  position: absolute;
+  top: -100%; left: 0;
+  height:100%;
+  width: 100%;
+  background-color: var(--black);
+  z-index: -1;
+  transition: .2s linear;
+}
+
+.button:hover:before{
+  top: 0%;
+}
+
+.button:hover{
+  box-shadow: .1rem .5rem var(--blue),
+              0 .3rem .5rem rgba(0,0,0,.3);
+}
+
+.heading{
+  text-align: center;
+  font-size: 4rem;
+  padding:1rem;
+  padding-top: 8rem;
+  color:var(--black);
+}
+
+.heading span{
+  color:var(--blue);
+}
+
+.text-my2blue {
+  color: var(--my2blue);
+}
+
+.text-align-right {
+  text-align: right !important;
+}
+
+header{
+  width:100%;
+  position: fixed;
+  top:0; left: 0;
+  padding: 2rem 1rem;
+  z-index: 1000;
+}
+
+.header-active{
+  background: var(--blue);
+  height: 96px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 .1rem .3rem rgba(0,0,0,.3);
+  padding: .5rem 1rem;
+}
+
+.header-active a {
+  color: var(--white);
+}
+
+header .container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a{
+  color:var(--white);
+}
+
+header a:hover{
+  color:var(--white);
+}
+
+header .container .logo{
+  font-size: 3rem;
+  z-index: 9;
+}
+
+header .container .logo span{
+  color:var(--blue);
+}
+
+header .nav ul{
+  margin:0; padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+
+header .nav ul li{
+  margin: 0 1rem;
+}
+
+header .nav ul li a{
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+header .fa-bars{
+  font-size: 2rem;
+  color:var(--white);
+  cursor: pointer;
+  display: none;
+}
+
+header .fa-times{
+  transform: rotate(180deg);
+}
+
+#overlay {
+  position: absolute; 
+  width: 100%; 
+  height: 662px; 
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); 
+  z-index: 2;
+}
+
+.home {
+  background-image: url('../images/home-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  height: 662px;
+  position: relative;
+  padding-top: 140px;
+}
+
+.home .content h1{
+  font-size: 7.3rem;
+  color:var(--white);
+}
+
+.home .content h1 span{
+  color:var(--blue);
+}
+
+.home .content h4{
+  font-size: 1.125rem;
+  color:var(--white);
+}
+
+.home .col-md-6 {
+  position: relative;
+  z-index: 9;
+}
+
+.home button {
+  width: 123px;
+  height: 51px;
+  font-size: 17.6px;
+  font-weight: 600;
+}
+
+#trending-line {
+  background-color: #00000095;
+  color: white;
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 9;
+}
+
+#trending-line .container .row .col-md-3 {
+  border-left: 1px solid white !important;
+  font-size: 1rem;
+  text-shadow: 0 0 black;
+}
+
+#trending-line .container .row .col-md-3:nth-child(1) {
+  border-left: none !important;
+  font-size: 1.25rem;
+  text-shadow: 0 0 black;
+}
+
+#trending-line a {
+  color: var(--white);
+}
+
+#trending-line a:hover {
+  color: var(--blue);
+}
+
+#posts-carousel {
+  position: relative;
+  background-color: var(--lightgray);
+  display: none;
+}
+
+#carousel-posts {
+  position: relative;
+  background-color: var(--lightgray);
+}
+
+.item-box-blog-image img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.item-box-blog-heading h3{
+  color: var(--darkgray);
+  text-align: left;
+  font-size: 1.315rem;
+}
+
+.item-box-blog-text {
+  color: var(--gray);
+  text-align: left;
+}
+
+.about .content .box{
+  margin:3rem 0;
+}
+
+.about .content .box h2{
+  font-size: 1.625rem;
+  color:var(--blue);
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.about .content .box p{
+  font-size: 1rem;
+  color: var(--darkgray);
+}
+
+.about .col-md-4 {
+  padding-left: 0;
+}
+
+.about .col-md-4 img {
+  border-radius: 5px;
+  width: 350px;
+}
+
+.about .col-md-8 {
+  padding-left: 0;
+}
+
+.post .box-container .box{
+  width:30rem;
+  margin:2rem 1rem;
+  overflow: hidden;
+  border-radius: .5rem;
+  box-shadow: 0 .3rem .5rem rgba(0,0,0,.3);
+}
+
+.post .box-container .box img{
+  height:20rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.post .box-container .box .content{
+  padding:0 1.5rem;
+}
+
+.post .box-container .box .content span{
+  color:#666;
+  font-size: 1.5rem;
+  display: block;
+  padding:1rem 0;
+}
+
+.post .box-container .box .content h3{
+  font-size: 2rem;
+  color:var(--black);
+}
+
+.post .box-container .box .content:hover h3{
+  color:var(--blue);
+}
+
+.post .box-container .box .content p{
+  font-size: 1.3rem;
+  color:var(--black);
+}
+
+.footer hr {
+  border-bottom: 1px solid var(--mediumgray) !important;
+  width: 100%;
+}
+
+.footer p{
+  font-size: 0.6875rem;
+  color: var(--mediumgray);
+  padding: 0;
+}
+
+/*
+* including carousel section 2
+*/
+
+.mt{float: left; margin-top: -20px; padding-top: 20px;}
+
+.bg-blue-ui {
+  background-color: #708198 !important;
+}
+
+figure img{width:300px;}
+
+#blogCarousel {
+  padding-bottom: 100px;
+}
+
+.blog .carousel-indicators {
+  left: 0;
+  top: -50px;
+  height: 50%;
+}
+
+/* colour indicators */
+
+.blog .carousel-indicators li {
+  background: var(--blue);
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+}
+
+.blog .carousel-indicators .active {
+  background: var(--my2blue);
+}
+
+.item-carousel-blog-block {
+  outline: medium none;
+  padding: 15px;
+}
+
+.item-box-blog {
+  z-index: 4;
+  background-color: var(--white);
+}
+
+.item-box-blog-image {
+  position: relative;
+}
+
+.item-box-blog-image figure img {
+  width: 100%;
+  height: auto;
+}
+
+.item-box-blog-date {
+  position: absolute;
+  z-index: 5;
+  padding: 4px 20px;
+  top: -20px;
+  right: 8px;
+  background-color: var(--blue);
+}
+
+.item-box-blog-date span {
+  color: var(--white);
+  display: block;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.item-box-blog-date span.mon {
+  font-size: 18px;
+}
+
+.item-box-blog-date span.day {
+  font-size: 16px;
+}
+
+.item-box-blog-body {
+  padding: 10px;
+}
+
+.item-heading-blog a h5 {
+  margin: 0;
+  line-height: 1;
+  text-decoration:none;
+  transition: color 0.3s;
+}
+
+.item-box-blog-heading a {
+    text-decoration: none;
+}
+
+.item-box-blog-data p {
+  font-size: 13px;
+}
+
+.item-box-blog-data p i {
+  font-size: 12px;
+}
+
+.item-box-blog-text {
+  max-height: 100px;
+  overflow: hidden;
+}
+
+.mt-10 {
+  float: left;
+  margin-top: -10px;
+  padding-top: 10px;
+}
+
+.btn.bg-blue-ui.white.read {
+  cursor: pointer;
+  padding: 4px 20px;
+  float: left;
+  margin-top: 10px;
+}
+
+.btn.bg-blue-ui.white.read:hover {
+  box-shadow: 0px 5px 15px inset #4d5f77;
+}
+
+/* carousel ends */
+
+/* custom navigation owl carousel */
+
+button.owl-prev {
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  text-align: center !important;
+  font-size: 50px !important;
+  margin-left: -25px !important;
+  transform: scaleY(1.5);
+  background: transparent !important;
+  color: var(--blue) !important;
+}
+
+button.owl-next {
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  text-align: center !important;
+  font-size: 50px !important;
+  margin-right: -25px !important;
+  transform: scaleY(1.5);
+  background: transparent !important;
+  color: var(--blue) !important;
+}
+
+/* custom ends */
+
+
+/* media query  */
+
+@media (max-width:768px){
+
+  header {
+    padding: 2rem 0;
+  }
+
+  header .fa-bars{
+    display: block;
+  }
+
+  header .nav{
+    position: fixed;
+    left:50%; 
+    transform: translate(-50%, -50%);
+    background: var(--blue);
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+  }
+
+  header .nav ul{
+    width: 100%;
+    flex-flow: column;
+    padding:1rem 0;
+    justify-content: center;
+  }
+
+  header .nav ul li{
+    width: 100%;
+    text-align: center;
+    margin:1rem 0;
+  }
+
+  header .nav ul li a{
+    font-size: 1.25rem;
+    display: block;
+  }
+
+  header .nav-toggle{
+    top:50%;
+    opacity: 1;
+  }
+
+  #home {
+    height: 420px;
+  }
+
+  #home .col-md-6 {
+    text-align: left;
+  }
+
+  #home .col-md-6 h1 {
+    font-size: 4rem;
+  }
+
+  #trending-line {
+    display: none;
+  }
+
+  #carousel-posts .container {
+    margin-left: 10px;
+    padding: 20px;
+  }
+
+  .about {
+    margin-left: 10px;
+    padding: 20px;
+  }
+
+  .about .col-md-4 img {
+    border-radius: 5px;
+    width: 100%;
+  }
+
+  .footer {
+    margin-left: 10px;
+    padding: 20px;
+  }
+
+  .footer p {
+    width: 170px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #carousel-posts {
+    background-color: var(--white);
+  }
+
+  .owl-theme .owl-nav {
+    display: none;
+  }
+
+}
