@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     
-    <title>Projeto Joylet</title>
+    <title>Projeto Joyjet</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
@@ -31,10 +31,17 @@
     <link rel="stylesheet" href="https://todayhost.com.br/site/escolaambiental/wp-content/themes/tema-escola-ambiental/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://todayhost.com.br/site/escolaambiental/wp-content/themes/tema-escola-ambiental/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
   
-
 </head>
 
 <body>
+
+<!-- Div necessária para carregar VLibras: vw -->
+<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>
 
 <!-- header  -->
 <header>
@@ -528,6 +535,9 @@ AOS.init({
         })
     });
 </script>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script> new window.VLibras.Widget('https://vlibras.gov.br/app'); </script>
 
 </body>
 </html>
